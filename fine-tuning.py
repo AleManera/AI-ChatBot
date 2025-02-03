@@ -3,6 +3,7 @@ from datasets import Dataset
 from huggingface_hub import login
 import json
 
+#login(token='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')
 
 # Load a pre-trained model and tokenizer
 model_name = "meta-llama/Llama-2-7b-chat-hf"  # Replace with the LLaMA model or any other language model you'd like to fine-tune
