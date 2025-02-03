@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 
 url_home = 'https://www.arol.com/'
@@ -14,9 +15,14 @@ urls = [url_home, url_customer_care, url_news_events, url_company, url_arol_grou
 for url in urls:
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    content = soup.prettify()
-    text = content.get_text(separator="\n")
+    #content = soup.prettify()
+    text = soup.get_text(separator="\n")
 
-    filename = f'{url}.txt'
-    with open(filename, 'w') as file:
-        file.write(text)
+    # Remove extra white spaces and blank lines
+    #lines = [line.strip() for line in text.splitlines() if line.strip()]
+    #cleaned_text = "\n".join(lines)
+
+    filename = f'{url.split("//")[1].replace("/", "_")}.txt'
+    if not os.path.exists(filename):
+        with open(filename, 'w') as file:
+            file.write(text)
