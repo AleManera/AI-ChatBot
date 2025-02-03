@@ -6,10 +6,8 @@ from huggingface_hub import login
 from webscraper import BeautifulSoup
 from webscraper import os
 
-#login(token='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')
 
 # Hugging Face API Token
-hf_api_token = "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"
 
 # Your fine-tuned model on Hugging Face
 model_name = "AleManera/fine-tuned-llama"

@@ -59,7 +59,6 @@ model_name = "AleManera/fine-tuned-llama"
 
 # Load the model from Hugging Face Hub (fine-tuned model)
 model = AutoModelForCausalLM.from_pretrained(model_name)
-hf_api_token = "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"
 #tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 pipe = pipeline("text-generation", model=model, token=hf_api_token)
