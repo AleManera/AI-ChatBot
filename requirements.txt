@@ -1,0 +1,13 @@
+transformers
+huggingface_hub
+scikit-learn
+beautifulsoup4
+requests
+numpy
+scipy
+torch
+tokenizers
+sentencepiece
+pyenv
+datasets
+langchain
