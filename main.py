@@ -151,7 +151,7 @@ def summarize_conversation(conversation_history):
     return summary
 
 
-def handle_conversation(input_text):
+def handle_conversation():
     #conversation_history = load_chat_history()
     conversation_history = ""
     #recent_messages = []  # Stores the last 10 interactions
@@ -186,6 +186,7 @@ def handle_conversation_gradio(user_input, conversation_history=""):
         return "Goodbye!"
 
     # Prepare context
+    conversation_history = ""
     context = prepare_context_merged_file()  # Make sure this function is defined
     full_context = conversation_history + f"\nUser: {user_input}\n"
 
